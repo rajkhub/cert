@@ -44,6 +44,13 @@ Scores
 
 #Consecutive numbers/Orders
 
+
+select num, 
+row_number() over (partition by Num order by Num) as ConsecutiveNums
+from Logs
+ConsecutiveNums>=3
+
+
 SELECT DISTINCT
     l1.Num AS ConsecutiveNums
 FROM
