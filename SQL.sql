@@ -63,3 +63,35 @@ WHERE
     AND l1.Num = l2.Num
     AND l2.Num = l3.Num
 ;
+
+
+##Employees Earning More Than Their Managers
+
+select e1.Name from 
+Employee e1, Employee e2
+where e1.ManagerId = e2.Id
+and e1.Salary> e2.Salary
+
+
+#Duplicate Emails
+
+select Email from Person 
+group by Email Having count(*)>1
+
+
+#Customers Who Never Order
+
+Select Name from Customers c
+ left join Orders  o ON
+o.CustomerId = C.Id where o.Id is null
+
+
+#Department Highest Salary
+
+Select e.Name as name,max(e.Salary),e.DepartmentId,d.Name as d_name from
+Employee e
+left join 
+Department d
+on e.DepartmentId = d.Id
+group by d_name
+
