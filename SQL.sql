@@ -95,3 +95,15 @@ Department d
 on e.DepartmentId = d.Id
 group by d_name
 
+
+select X.*,emp.Name from 
+(
+select max(e.salary) as Salary,d.Name as Department
+from Employee e
+join 
+Department d
+on e.DepartmentId= d.Id
+group by e.DepartmentId
+)X
+join Employee emp
+on emp.Salary = X.Salary
