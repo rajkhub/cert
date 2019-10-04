@@ -107,3 +107,28 @@ group by e.DepartmentId
 )X
 join Employee emp
 on emp.Salary = X.Salary
+
+
+##Delete Duplicate Emails
+
+DELETE FROM Person where Email IN
+(
+Select Email from Person
+    group by Email
+    Having count(*)>1
+)
+
+
+#Rising Temperature Consecutive 1 day
+
+SELECT t.Id 
+FROM 
+Weather AS t, 
+Weather AS y
+WHERE DATEDIFF(t.RecordDate, y.RecordDate) = 1 AND t.Temperature > y.Temperature;
+
+
+select A.Id from Weather as A, Weather as B 
+where A.Temperature > B.Temperature and A.Date = B.Date + INTERVAL 1 DAY
+
+
