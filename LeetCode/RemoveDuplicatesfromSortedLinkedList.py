@@ -3,7 +3,7 @@
 
 def deleteDuplicates(self, head):
     curr = head
-    while curr is not None and curr.nex is not None t:
+    while curr is not None and curr.next is not None:
         if curr.val == curr.next.val:
             curr.next = curr.next.next
         else:
