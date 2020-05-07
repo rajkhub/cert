@@ -12,12 +12,12 @@ class Solution(object):
         currNode = dummy = ListNode(0)  
         
         while l1 is not None and l2 is not None:
-            if l1.val >= l2.val:
-                currNode.next = l2
-                l2 = l2.next
-            else:
+            if l1.val<= l2.val:
                 currNode.next = l1
                 l1 = l1.next
+            else:
+                currNode.next = l2
+                l2 = l2.next
             currNode = currNode.next   
         if l1 is None:
             currNode.next = l2
