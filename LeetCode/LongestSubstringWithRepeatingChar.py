@@ -7,6 +7,8 @@ def longestSubstring(s, k):
     for c in set(s):
         if s.count(c) < k:
             for ele in s.split(c):
+                res =0 
                 print ele
-                return longestSubstring(ele,k)
+                res =  max(res,longestSubstring(ele,k))
+            return res
     return len(s)
