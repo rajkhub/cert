@@ -13,6 +13,27 @@
 #Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
 #Therefore, return 3 as the starting index.
 
+
+def canCompleteCircuit(self, gas, cost):
+    currTank =0 
+    pos =0 
+    totalGas =0
+    totlCost = 0
+    for i in range(len(gas)):
+        currTank += gas[i] - cost[i]
+        totalGas += gas[i]
+        totlCost += cost[i]
+        
+        if currTank <0:
+            currTank = 0
+            pos = i +1
+    if totalGas - totlCost <0:
+        return -1
+    else:
+        return pos
+
+
+
 def canCompleteCircuit(self, gas, cost):
     curTank =0
     totalTank =0
