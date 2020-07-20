@@ -2,6 +2,19 @@
 #Output: true
 #Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
 
+
+def canJump(self, nums):
+
+    lastIndex = len(nums)-1
+    for i in reversed(range(len(nums)-1)): 
+        print i
+        diff = lastIndex - i
+        if nums[i]>=diff:
+            lastIndex = i 
+    return lastIndex ==0
+
+
+
 #1st Soln
 def canJump(self, nums):
     jumplen = 0
