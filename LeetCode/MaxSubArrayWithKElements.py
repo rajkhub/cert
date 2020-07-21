@@ -1,6 +1,7 @@
 #Max SubArray with Atleast K numbers
-nums=[-4, -2, 1, -3]
-x =2
+#nums=[-4, -2, 1, -3]
+#x =2
+#output = -1
 
 def maxSubArray(nums,x):
     output = 0 
