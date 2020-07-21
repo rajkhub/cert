@@ -4,8 +4,7 @@
 # ["Charles","22"]]
 
 #Ouput: 87
-
-
+#Two Dictionaries
 def avgScore(scores_list):
     dicts = {}
     dicts_score = {}
@@ -34,7 +33,7 @@ avgScore(scores_list)
 #["Charles",100],
 #["Eric",64],
 #["Charles",22]]
-
+#Dictionary of dictionaries
 def avgScoreN(scores_list):
     dicts = {}
     mx =0 
