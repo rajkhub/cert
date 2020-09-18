@@ -24,3 +24,11 @@ def levelOrderPrint(tree):
             print '\n',
             currentCount, nextCount = nextCount, currentCount
 
+            
+root = Node(2)
+root.left = Node(1)
+root.right = Node(3)
+root.left.right = Node(5)
+root.right.right = Node(4)
+
+printTree(root)
