@@ -24,3 +24,10 @@ def topKFrequent(nums, k):
         del dic[max_key]
         k-=1
     return res
+
+#         s = sorted(dic.items(),key=lambda x: x[1],reverse=True)
+#         l =[]
+#         for x in range(0,k):
+#             print(s[x][0])
+#             l.append(s[x][0])
+#         return l
