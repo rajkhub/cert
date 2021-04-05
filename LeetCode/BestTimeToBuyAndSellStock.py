@@ -11,3 +11,15 @@ class Solution(object):
             profit = max(profit, price-low)
             low = min(low, price)
         return profit
+    
+    
+class Solution(object):
+    def maxProfit(self, prices):
+        minimum = float('inf')
+        profit =0 
+        for i in range(len(prices)):
+            if prices[i] < minimum:
+                minimum= prices[i] 
+            elif prices[i]- minimum > profit:
+                profit = prices[i] - minimum 
+        return profit
