@@ -34,3 +34,35 @@ class Solution(object):
         while q not in ancestors:
             q= parent[q]
         return q
+
+    
+#Recursion   
+    
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        def recur(root, p, q):
+            if root == None:
+                return None
+            if root == p or root ==q:
+                return root
+        
+            left = recur(root.left,p,q) 
+            right = recur(root.right,p,q)
+        
+            if left != None and right != None:
+                return root
+            if left == None and right == None:
+                return None
+            if left != None:
+                return left
+            if right != None:
+                return right            
+            
+        return recur(root, p, q)    
+
