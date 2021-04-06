@@ -14,7 +14,8 @@ class Solution(object):
         stack=[root]
         parent={root:None}
         
-        while p not in parent or q not in parent:
+#         while p not in parent or q not in parent:
+        while len(stack)!=0:
             node=stack.pop()
             
             if node.left:
@@ -25,10 +26,11 @@ class Solution(object):
                 stack.append(node.right)
         ancestors= set()
         
+#The Below Logic will save all possible ancestors in Ancestors Set
         while p:
             ancestors.add(p)
             p = parent[p]
-            
+# If there is any matching common Parent in ancestors Set, it will retrieve lowest common Ancestor
         while q not in ancestors:
             q= parent[q]
         return q
