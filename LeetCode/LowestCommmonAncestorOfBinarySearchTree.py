@@ -1,6 +1,6 @@
-# Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
-# Output: 3
-# Explanation: The LCA of nodes 5 and 1 is 3.
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.
 
 # Definition for a binary tree node.
 class TreeNode(object):
